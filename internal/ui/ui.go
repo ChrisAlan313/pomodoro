@@ -3,25 +3,9 @@ package ui
 import (
 	"context"
 	"time"
-
-	"github.com/rivo/tview"
-)
-
-var (
-	view *tview.Modal
-	app  *tview.Application
 )
 
 func Run(ctx context.Context, t time.Time) {
-	app = tview.NewApplication()
-	view = tview.NewModal().
-		SetText("REPLACE THIS WITH TIME COUNT DOWN").
-		AddButtons([]string{"Quit", "Cancel"}).
-		SetDoneFunc(func(buttonIndex int, buttonLabel string) {
-			if buttonLabel == "Quit" {
-				app.Stop()
-			}
-		})
 	tick := time.Tick(500 * time.Millisecond)
 
 	go eventLoop(ctx, t, tick)
