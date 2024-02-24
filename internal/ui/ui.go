@@ -10,5 +10,5 @@ func UpdateTime(tl time.Duration) {
 	tl = tl.Truncate(time.Second)
 	st := tl.String()
 	fmt.Printf("\033[A\033[2K")
-	fmt.Println("\rTime left: ", st) // Prints the remaining duration until the deadline
+	fmt.Println("\rPomodoro timer: ", st) // Prints the remaining duration until the deadline
 }
